@@ -33,11 +33,6 @@ do_deploy:append() {
         write_cfg "dtoverlay=pi3-disable-bt"
     fi
 
-    if [ "${RPI_V4L2M2M_DECODER}" = "1" ]; then
-        write_comment "Enable v4l2m2m decoder"
-        write_cfg "dtoverlay=rpivid-v4l2"
-    fi
-
     if [ "${RPI_ALWAYS_FULLHD}" = "1" ]; then
         write_comment "Always run in 1080p@60hz HDMI with audio"
         write_cfg "hdmi_group=1"
